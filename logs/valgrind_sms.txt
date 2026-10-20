@@ -1,0 +1,51 @@
+==8215== Memcheck, a memory error detector
+==8215== Copyright (C) 2002-2024, and GNU GPL'd, by Julian Seward et al.
+==8215== Using Valgrind-3.26.0 and LibVEX; rerun with -h for copyright info
+==8215== Command: ./sms_app_x86 -d 30
+==8215== Parent PID: 4998
+==8215== 
+==8215== Conditional jump or move depends on uninitialised value(s)
+==8215==    at 0x48C752: __strcspn_sse42 (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x483A5D: strsep (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x4494BC: fillin_rpath.isra.0 (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x449BEC: _dl_init_paths (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x451328: _dl_non_dynamic_init (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x45281F: __libc_init_first (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x4057D5: (below main) (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215== 
+==8215== Conditional jump or move depends on uninitialised value(s)
+==8215==    at 0x48C7A5: __strcspn_sse42 (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x483A5D: strsep (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x4494BC: fillin_rpath.isra.0 (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x449BEC: _dl_init_paths (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x451328: _dl_non_dynamic_init (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x45281F: __libc_init_first (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x4057D5: (below main) (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215== 
+==8215== Conditional jump or move depends on uninitialised value(s)
+==8215==    at 0x42FDEA: free (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x4606CC: __dcigettext (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x401309: perror_internal (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x4013D1: perror (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x402A46: main (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215== 
+==8215== Thread 5:
+==8215== Syscall param mq_timedsend(msg_ptr) points to uninitialised byte(s)
+==8215==    at 0x42B03D: mq_timedsend (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x401F44: send_log (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x40260B: processor_thread_func (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x42609B: start_thread (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==    by 0x495663: clone (in /home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/app/sms_app_x86)
+==8215==  Address 0x6803012 is on thread 5's stack
+==8215==  in frame #1, created by send_log (???:)
+==8215== 
+==8215== 
+==8215== HEAP SUMMARY:
+==8215==     in use at exit: 0 bytes in 0 blocks
+==8215==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==8215== 
+==8215== All heap blocks were freed -- no leaks are possible
+==8215== 
+==8215== Use --track-origins=yes to see where uninitialised values come from
+==8215== For lists of detected and suppressed errors, rerun with: -s
+==8215== ERROR SUMMARY: 4 errors from 4 contexts (suppressed: 0 from 0)

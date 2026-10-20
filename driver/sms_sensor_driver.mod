@@ -1,0 +1,2 @@
+/home/nguyen-tran/SE200558_TranDinhKhoiNguyen_Asgn02/driver/sms_sensor_driver.o
+
